@@ -3,21 +3,22 @@ import interfaz
 
 interfaz.limpiar_terminal()
 memoria = []
-num1 = int(input(" "))
+# leer primer número sin necesidad de presionar Enter
+num1 = interfaz.leer_numero_sin_enter(" ")
 interfaz.limpiar_terminal()
 memoria.append(num1)
 i = "si"
 resultado = 0
 while (i == "si"):
     interfaz.operacion_anterior(memoria)
-    operacion = input(" ")
+    operacion = interfaz.leer_operacion_sin_enter(" ")
     print(operacion)
     memoria.append(operacion)
     interfaz.limpiar_terminal()
     if operacion == "=":
         break
     interfaz.operacion_anterior(memoria)
-    num2 = int(input(" "))
+    num2 = interfaz.leer_numero_sin_enter(" ")
     interfaz.limpiar_terminal()
     if operacion == "+":
         resultado =operaciones.sumar(num1,num2)
